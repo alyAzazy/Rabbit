@@ -19,6 +19,7 @@ function Home() {
   function searchProducts(event){
     event.preventDefault();
     const searchName = event.target.name.value;
+    console.log(searchName);
     setViewedProducts(products.filter((product, i, a) => {
       return product.name.toLowerCase().includes(searchName.toLowerCase());
     }));

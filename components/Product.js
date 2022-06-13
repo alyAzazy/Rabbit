@@ -71,14 +71,15 @@ function Product(props) {
         });
         if (data) {
           setSuccess(true)
-          //setMessage(`Success! Your order number is: ${data.id}`);
+
+          setMessage(`Success! Please check your order ID in your email`);
         }
       } catch (error) {
         setMessage("Error " + error)
       }
     }
     else {
-      setMessage("Error " + error.message)
+      setMessage("Error hi")
     }
 
   };

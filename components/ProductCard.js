@@ -26,6 +26,9 @@ function ProductCard({
           <span className="ml-2 text-lg leading-7">
             {(stock > 0) ? "$" + price : "Out Of Stock"}
           </span>
+          <span className="ml-2 text-lg leading-7">
+            {stock}
+          </span>
         </div>
       </div>
     </div>

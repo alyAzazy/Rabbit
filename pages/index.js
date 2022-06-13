@@ -10,7 +10,7 @@ function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    const response = fetch('http://localhost:9000/getproducts/').then((res) => res.json()).then((data) => {
+    const response = fetch('https://api-cyramp864-alyelazazy-giu-unide.vercel.app/api/').then((res) => res.json()).then((data) => {
       setProducts(data);
       setViewedProducts(data);
     });
@@ -23,7 +23,7 @@ function Home() {
       return product.name.toLowerCase().includes(searchName.toLowerCase());
     }));
    }
-
+   
   if (!router.isFallback && !products) {
     return <Error statusCode={404} />;
   }
@@ -36,13 +36,16 @@ function Home() {
           name="GIU SE"
           content="Rabbit Mart Marketplace"
         />
-        
       </Head>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-      <form class="example" onSubmit={searchProducts} >
+      <form className="example" onSubmit={searchProducts} >
         <input id = "name" type="text" placeholder="Search.." name="search"/>
         <button type="submit"><i className="fa fa-search"></i></button>
       </form>
+      <div>
+        <a className="shipping-link" href="/shipping">Check Shipping Status</a>
+      </div>
+      
 
       <div className="mt-4">
         <Products products={viewedProducts} />

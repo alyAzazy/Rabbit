@@ -67,3 +67,10 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+.shipping-link {
+  margin-left: 20px;
+  font-size: 24px;
+  color: blue;
+  background-color: white;
+}
